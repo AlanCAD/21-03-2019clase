@@ -1,0 +1,48 @@
+//skatche//
+
+var z;
+
+function setup() {
+  createCanvas(400, 400);
+  z = new Zombie();
+  frameRate(10);
+}
+
+function draw() {
+  background(220);
+  z.show();
+  if(keyIsPressed && keyCode== RIGHT_ARROW)
+    z.derecha();
+}
+
+
+//SUBIR TODAS LAS IMAGENES DEL PNG//
+
+//LA CLASE JS//
+
+
+
+class Zombie{
+constructor(){
+this.x= width/2; 
+this.y= height/2;
+  this.imgs = [];
+  this.frame=0;
+  for(var i = 0; i < 18; i ++ ){
+  this.imgs[i]=loadImage("Zombie/"+i+".gif")}
+}
+ 
+  show(){
+imageMode(CENTER);
+image(this.imgs[this.frame],this.x,this.y);
+    
+}
+  
+  derecha (){
+  this.frame++;
+    this.x = this.x+10;
+    if(this.frame>17){
+    this.frame=0;}
+  }
+}
+
