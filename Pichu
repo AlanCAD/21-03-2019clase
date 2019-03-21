@@ -1,0 +1,72 @@
+var pishulas = [];
+
+//var P;
+
+function setup() {
+  createCanvas(400, 400); 
+    //P = new pichu();
+  for(var i = 0 ;i<100; i ++ ){
+    pishulas[i] = new Pishulas();}
+}
+
+function draw() {
+  background(220);
+ /* P.show();
+  P.caer();
+  P.salir();
+  if(P.salir()==true){
+  P.regresar();} */
+  
+  for(var i = 0; i <  pishulas.length; i++){
+  pishulas[i].show();
+    pishulas[i].caer();
+    if(pishulas[i].salir()==true){
+  pishulas[i].regresar();}
+    
+    //notprotect//
+  
+  }
+}
+
+
+
+
+
+//CLASE DE LA  FILA JS//
+
+class Pishulas {
+  constructor() {
+    this.x = random(0, width);
+    this.y = random(0, height);
+    this.img = loadImage('Pichu.png');
+    this.vel = random(5, 10);
+
+  }
+
+  show() {
+    this.ancho = this.img.width / 3;
+    this.alto = this.img.height / 3;
+    imageMode(CENTER);
+    image(this.img, this.x, this.y, this.ancho, this.alto);
+  }
+  caer() {
+    this.y = this.y + this.vel;
+  }
+
+  salir() {
+    var resultado;
+    if (this.y > height) {
+      resultado = true}
+   
+    else {
+      resultado = false;
+    }
+    return resultado;
+
+  }
+  
+  
+  
+  regresar(){
+  this.y=-this.alto;}
+}
