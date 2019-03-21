@@ -12,7 +12,19 @@ function setup() {
   pishulas[i].regresar();}
     //notprotect// 
   }  
-}
+ }
+ *//SE PUDE HACER DE ESTA MANERA O LA MANERA QUE ESTA ENSIMA DE ESTE
+  function draw() {
+  background(220);
+  for(var p of pishulas){
+  p.show();
+    p.caer();
+    if(p.salir()==true){
+  p.regresar();}
+ //*
+ 
+ 
+ 
  function mousePressed(){
   var p = new Pishulas(mouseX,mouseY);
   pishulas.push(p);
