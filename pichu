@@ -13,8 +13,8 @@ function setup() {
     //notprotect// 
   }  
 }
-function mousePressed(){
-  var p = new Pishulas();
+ function mousePressed(){
+  var p = new Pishulas(mouseX,mouseY);
   pishulas.push(p);
   
   }
@@ -23,9 +23,9 @@ function mousePressed(){
   //CLASE DE LA IMAGEN JS//
   
   class Pishulas {
-  constructor() {
-    this.x = random(0, width);
-    this.y = random(0, height);
+  constructor(x,y) {
+    this.x = x;
+    this.y = y;
     this.img = loadImage('Pichu.png');
     this.vel = random(5, 10);
 
